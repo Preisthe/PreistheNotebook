@@ -120,7 +120,7 @@ git log -p
 git commit -m "" --amend
 ```
 
-- 回到上一次提交
+- 重置至上一次提交
 
 ```bash
 git reset hashtag
@@ -136,6 +136,7 @@ git show id
 
 ```bash
 git checkout id
+git checkout head^^  #向前2
 ```
 
 - 修改提交树**\***
