@@ -137,6 +137,7 @@ git show id
 ```bash
 git checkout id
 git checkout head^^  #向前2
+head~n  #向前n个版本
 ```
 
 - 修改提交树**\***
