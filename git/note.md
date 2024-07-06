@@ -72,7 +72,7 @@ git check-ignore -v file
 
 ### 提交 commit
 
-- check the unstaged changes
+- check the uncommited changes
 
 ```bash
 git diff
