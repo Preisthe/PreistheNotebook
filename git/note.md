@@ -59,16 +59,29 @@ git add --all
 .
 ```
 
-创建.gitignore文件
+### .gitignore
+
 忽略文件或文件夹  
+*注意*：该文件只能作用于Untracked Files，也就是那些从来没有被 GIT 记录过的文件（自添加以后，从未 add 及 commit 过的文件）。
 
 - `*` 通配多个字符，`**` 通配中间目录（有或无）
 - ! 取消忽略
 - <https://git-scm.com/docs/gitignore>
 
+如果要忽略已经被git管理的文件，需要先用 git 删除，再添加到 .gitignore 中。
+
+```bash
+git rm --cached <file> / -r <dir>
+```
+
+确认忽略文件:
+
 ```bash
 git check-ignore -v file
 ```
+
+- 若被忽略，则显示信息，且正常退出
+- -v 是 verbose
 
 ### 提交 commit
 
@@ -125,6 +138,9 @@ git commit -m "" --amend
 ```bash
 git reset hashtag
 ```
+
+*NOTE*: reset 的作用是回到某个提交，但默认是保留那个提交下已经做出的修改，也就是更接近下一个提交的状态，因此适合用于修改 reset 到的后一个提交。  
+同时，如果当前提交之后还有原先的其他提交，则会丢失，可用 `git reflog` 恢复
 
 - 显示详细提交信息
 
@@ -195,6 +211,9 @@ git branch -d branch-name
     git push -u origin main
     ```
 
+    git 提交时不能与远程仓库有冲突，所以如果有，要先 pull 更新本地，再推送
+    或者 -f 强制推送
+
     Note:*will not push branch*
 
     ```bash
@@ -216,3 +235,5 @@ git branch -d branch-name
     ```bash
     git pull REMOTE
     ```
+
+    也就是说，git pull 其实是 fetch 和 merge 的组合，所以有时不能随意使用 pull
