@@ -142,6 +142,12 @@ git reset hashtag
 *NOTE*: reset 的作用是回到某个提交，但默认是保留那个提交下已经做出的修改，也就是更接近下一个提交的状态，因此适合用于修改 reset 到的后一个提交。  
 同时，如果当前提交之后还有原先的其他提交，则会丢失，可用 `git reflog` 恢复
 
+reset 的三种模式：
+
+- soft: 更改已 staged
+- mixed(default): 更改未 stage
+- hard: 清除这次提交上的所有更改，相当于 checkout
+
 - 显示详细提交信息
 
 ```bash
