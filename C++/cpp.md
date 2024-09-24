@@ -159,18 +159,6 @@ void shift(vector<std::pair<int, int>>& nums) { // 函数声明中是引用
 - 若引用常量，则都**不能**修改
 - 常量引用可以通过 `&` 引用**右值**
 
-### std::vector
-
-动态数组
-
-#### 基本操作
-
-- `v.size()` 返回大小
-- `v.push_back(x)` 在末尾添加元素
-- `v[i] = k` 访问元素
-- `v.empty()` 判断是否为空
-- `v.clear()` 清空
-
 ## 流
 
 How can we convert between string-represented data and
@@ -251,7 +239,7 @@ istream& getline(istream& is, string& str, char delim);
    - str 没有空间了，并设高 fail 位（`is.fail()`）
 3. 如果出于某种原因没读到任何字符，则 fail
 
-**不要混用 `>>` 和 `getline`**!
+**不要混用 `>>` 和 `getline` !**
 因为 `>>` 会保留空白字符，而 `getline` 会越过 delimiter
 
 ### Input File Streams
@@ -304,3 +292,37 @@ half(3.0) // uses version (2), returns 1.5
 ```
 
 同时，*c++ 引入了函数默认参数*
+
+## 容器
+
+容器是一种用于组织数据的数据结构类型
+
+vector, deque, list, map, set 等都是容器
+
+### std::vector
+
+动态数组
+
+#### 基本操作
+
+- `v.size()` 返回大小
+- `v.push_back(x)` 在末尾添加元素
+- `v[i] = k` 访问元素
+- `v.empty()` 判断是否为空
+- `v.clear()` 清空
+
+## 迭代器
+
+迭代器是一种用于遍历容器中元素的对象，有头有尾，可以前后移动，可以比较，跟指针简直一毛一样
+
+其实迭代器是“广义”指针，C 语言中的指针只是迭代器的一种
+
+stl 中的所有容器都支持迭代器，但并不完全相同
+
+一些共同属性：
+
+- Initializing: `iter = s.begin()`
+- Incrementing: `++iter`
+- Dereferencing: `*iter`
+- Comparing: `iter != s.end()`
+- Copying: `new_iter = iter`
