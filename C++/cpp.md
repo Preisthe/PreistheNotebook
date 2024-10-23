@@ -114,6 +114,8 @@ void shift(vector<std::pair<int, int>>& nums) {
 
 ### 引用
 
+***!!! 特别注意！谨慎使用对函数内局部变量的引用！超出生命域可能导致段错误！***
+
 使用 `&` 符号，相当于对变量**取别名**，常用于函数传参，相当于直接自动指针了。例：
 
 ```cpp
@@ -326,3 +328,17 @@ stl 中的所有容器都支持迭代器，但并不完全相同
 - Dereferencing: `*iter`
 - Comparing: `iter != s.end()`
 - Copying: `new_iter = iter`
+
+迭代器层次关系图：
+
+@import "img/it.png"
+
+- `input` 只能读取值，`output` 在此基础上还能写入值
+- `bidirectional` 可以向前向后移动
+- “随机”访问意味着访问任何位置的元素所需的时间都是一样的，类似索引
+- 指针就是 Random-access 类迭代器
+- stl 容器至少支持 forward 迭代器
+
+stl 迭代器：
+
+@import "img/stl-it.png"
