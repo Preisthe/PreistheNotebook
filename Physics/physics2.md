@@ -351,19 +351,20 @@ $$\nabla^2V\equiv\nabla\cdot\nabla V=-\frac{\rho}{\epsilon_0}$$
 
 #### 然而，这里竟然藏着一个巨大的漏洞！
 
-问题在于**法拉第电磁感应定律**。我们对他两边求散度
+我们对**法拉第电磁感应定律**两边求散度
 $$\nabla\cdot\left(\nabla\times\vec{E}\right)=\nabla\cdot\left(-\frac{\partial\vec{B}}{\partial t}\right)=-\frac{\partial}{\partial t}\left(\nabla\cdot\vec{B}\right)$$
-由于磁场的散度恒为 0，所以上式也理应恒等于 0
+由于磁场的散度恒为 0，所以上式也理应恒等于 0.
+事实上**旋度的散度为 0** 也是一个数学恒等式。
 
-事实上**旋度的散度为 0** 也是一个数学恒等式。然而，当我们对安培环路定理做同样的操作时
+然而，当我们对**安培环路定理**做同样的操作时
 $$\nabla\cdot\left(\nabla\times\vec{B}\right)=\nabla\cdot\left(\mu_0\vec{J}\right)=\mu_0(\nabla\cdot\vec{J})$$
-右边却并不恒等于 0！
+问题出现了，右边却并不恒等于 0！
 
 进一步，应用连续性方程 $\nabla\cdot\vec{J}=-\frac{\partial\rho}{\partial t}$ 和高斯定理，得到
 $$\nabla\cdot(\nabla\times\vec{B})=-\mu_0\frac{\partial\rho}{\partial t}=-\mu_0\frac{\partial(\epsilon_0\nabla\cdot\vec{E})}{\partial t}=-\nabla\cdot\left(\mu_0\epsilon_0\frac{\partial\vec{E}}{\partial t}\right)$$
 于是，那个男人说，只要把安培环路定理小修一下：
 $$\nabla\times\vec{B}=\mu_0\vec{J}+\mu_0\epsilon_0\frac{\partial\vec{E}}{\partial t}$$
-其中，
+称为**全电流定律**。其中，
 $$\vec{J}_d=\epsilon_0\frac{\partial\vec{E}}{\partial t}$$
 称为**位移电流**（displacement current）
 
@@ -371,7 +372,7 @@ $$\vec{J}_d=\epsilon_0\frac{\partial\vec{E}}{\partial t}$$
 
 麦克斯韦的修正还体现了一个非常巧妙的对称性，即正如变化的磁场产生电场，**变化的电场也能产生磁场**。
 
-修正后的安培环路定理的积分形式：
+安培环路定理修正后的**全电流定律**的积分形式：
 $$\oint_C\vec{B}\cdot d\vec{s}=\mu_0(i_{enc}+\int_S\vec{J}_d\cdot d\vec{A})$$
 我们可以直观地来认识一下**位移电流**
 
