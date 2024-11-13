@@ -69,3 +69,31 @@ $$\rho=\frac{m}{ne^2\tau}$$
 $$\frac{1}{2}mv_{th}^2=\frac{3}{2}k_B T$$
 
 将两者进行比较，我们发现电子的漂移速度确实非常小。
+
+### 连续性方程
+
+在上面的推导中，我们其实已经默认了（局部的）电荷守恒定律。也就是说，如果一块区域中的总电荷量发生了改变，那么一定有等量的电荷通过区域的边界曲面，流入或流出这块区域。
+$$\frac{\partial\rho}{\partial t}=-\nabla\cdot\vec{J}$$
+
+### 电容
+
+**电容器**是存储电荷的器件。**电容**表示了电容器存储电荷的能力
+$$C=\frac{q}{V}$$
+
+#### 平行板电容器
+
+忽视边缘效应，可以把平行板之间的电场看作匀强电场
+@import "img/lec6/plate.png"
+利用高斯定理，$q=\epsilon_0EA$
+$$C=\frac{q}{V}=\frac{q}{Ed}=\frac{\epsilon_0A}{d}$$
+
+#### 柱形电容器
+
+假设圆柱长度 L 远大于半径，忽视边缘效应
+@import "img/lec6/cylinder.png"
+取不同半径的圆柱面作为高斯面，可以得到柱形电容器内的电场分布
+$$\begin{align}
+  q&=\epsilon_0E(2\pi rL)\\
+  V&=\int_a^bEdr=\frac{q}{2\pi\epsilon_0L}\int_a^b\frac{dr}{r}\\
+  C&=\frac{q}{V}=2\pi\epsilon_0\frac{L}{\ln(b/a)}
+\end{align}$$
